@@ -7,20 +7,17 @@ and each box may contain keys to the other boxes.
 
 
 def canUnlockAll(boxes):
-    """Unlocks boxes"""
-
-    if type(boxes) is not list:
+    if not boxes:
         return False
-
     if len(boxes) == 0:
         return False
-
-    unlock = [0]
-    for key in unlock:
-        for element in boxes[key]:
-            if element not in unlock and element < len(boxes):
-                unlock.append(element)
-
-    if len(unlock) == len(boxes):
+    keys = []
+    keys.append(0)
+    for key in keys:
+        new_keys = boxes[key]
+        for new_key in new_keys:
+            if new_key not in keys and new_key < len(boxes):
+                keys.append(new_key)
+    if len(keys) == len(boxes):
         return True
     return False
