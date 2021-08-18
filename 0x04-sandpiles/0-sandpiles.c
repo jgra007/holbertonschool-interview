@@ -121,6 +121,6 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
                     grid2[i][j] += grid1[i][j];
             }
         }
-        copy(grid2, grid1);
+        copy(grid2, grid1); 
     }
 }
