@@ -4,4 +4,3 @@
 void sandpiles_sum(int grid1[3][3], int grid2[3][3]);
 
 #endif /* SAND_PILES_H */
-© 2021 GitHub, Inc.
