@@ -1,10 +1,6 @@
 #include "menger.h"
 
-/**
- * menger - draws a 2D menger sponge
- * @level: number of levels to draw
- * Return: nothing
- */
+
 void menger(int level)
 {
 	int col, row, size;
@@ -21,12 +17,7 @@ void menger(int level)
 }
 
 
-/**
- * hash_space - gets a character
- * @col: column
- * @row: row
- * Return: '#' or ' '
- */
+
 char hash_space(int col, int row)
 {
 	while (col && row)
