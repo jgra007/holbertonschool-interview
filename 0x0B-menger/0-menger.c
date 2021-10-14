@@ -27,6 +27,8 @@ void menger(int level)
  * @row: row
  * Return: '#' or ' '
  */
+
+
 char hash_space(int col, int row)
 {
 	while (col && row)
