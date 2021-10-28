@@ -62,7 +62,3 @@ avl_t *recursive_tree(int *array, int ben, int end)
 		right->parent = parent;
 	return (parent);
 }
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
