@@ -1,17 +1,19 @@
 #!/usr/bin/node
 const request = require('request');
-request(`https://swapi-api.hbtn.io/api/films/${process.argv[2]}`, (err, res, body) => {
-  if (!err) {
+const movieId = process.argv[2];
+const url = `https://swapi-api.hbtn.io/api/films/${movieId}`;
+request(url, async (error, response, body) => {
+  if (!error) {
     const characters = JSON.parse(body).characters;
-    recursionRequestPrint(characters, 0);
+    for (const charId in characters) {
+      await new Promise((resolve, reject) => {
+        request(characters[charId], (error, response, body) => {
+          if (!error) {
+            console.log(JSON.parse(body).name);
+            resolve();
+          }
+        });
+      });
+    }
   }
 });
-
-function recursionRequestPrint (url, index) {
-  request(url[index], (err, res, body) => {
-    if (!err) {
-      console.log(JSON.parse(body).name);
-      if (index + 1 < url.length) recursionRequestPrint(url, ++index);
-    }
-  });
-}
