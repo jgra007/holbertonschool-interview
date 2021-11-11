@@ -14,4 +14,4 @@ function recursionRequestPrint (url, index) {
       if (index + 1 < url.length) recursionRequestPrint(url, ++index);
     }
   });
-}
+} 
